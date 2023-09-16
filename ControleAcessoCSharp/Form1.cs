@@ -46,6 +46,16 @@ namespace ControleAcessoCSharp
             dataGridView1.Columns["nivel"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.Columns["nivel"].ReadOnly = true;
 
+            //adicionar coluna
+            var acesso = new DataGridViewCheckBoxColumn();
+            acesso.HeaderText = "Liberado";
+            acesso.Width = 60;
+            acesso.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            acesso.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns.Add(acesso);
+
         }
+
+      
     }
 }

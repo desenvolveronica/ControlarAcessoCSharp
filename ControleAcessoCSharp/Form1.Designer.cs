@@ -161,13 +161,13 @@
             // invalidarAtivarToolStripMenuItem
             // 
             this.invalidarAtivarToolStripMenuItem.Name = "invalidarAtivarToolStripMenuItem";
-            this.invalidarAtivarToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
-            this.invalidarAtivarToolStripMenuItem.Text = "Invalidar/ Ativar";
+            this.invalidarAtivarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.invalidarAtivarToolStripMenuItem.Text = "Invalidar - Ativar";
             // 
             // acessoToolStripMenuItem1
             // 
             this.acessoToolStripMenuItem1.Name = "acessoToolStripMenuItem1";
-            this.acessoToolStripMenuItem1.Size = new System.Drawing.Size(158, 22);
+            this.acessoToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.acessoToolStripMenuItem1.Text = "Acesso";
             // 
             // sairToolStripMenuItem
