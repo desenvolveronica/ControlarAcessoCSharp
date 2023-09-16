@@ -37,8 +37,8 @@ namespace ControleAcessoCSharp
             dataGridView1.Columns["nome"].ReadOnly = true;
 
             dataGridView1.Columns["descricao"].HeaderText = "Descrição";
-            dataGridView1.Columns["nome"].Width = 380;
-            dataGridView1.Columns["nome"].ReadOnly = true;
+            dataGridView1.Columns["descricao"].Width = 380;
+            dataGridView1.Columns["descricao"].ReadOnly = true;
 
             dataGridView1.Columns["nivel"].HeaderText = "Nível";
             dataGridView1.Columns["nivel"].Width = 60;
