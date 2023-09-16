@@ -23,7 +23,7 @@ namespace ControleAcessoCSharp
         }
         //método para ler o menu que está no formulário
         public static HashSet<Opcoes> Criar(MenuStrip menu) //HashSet significa coleção e neste caso uma coleção de opçoes
-        {
+        {//ele sendo STATIC não precisa instanciar um objeo da classe OPÇÕES
             var hashSetOpcoes = new HashSet<Opcoes>();
             //nivel 1
             foreach (ToolStripMenuItem item in menu.Items)

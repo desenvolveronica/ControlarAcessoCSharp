@@ -20,6 +20,7 @@ namespace ControleAcessoCSharp
         private void button1_Click(object sender, EventArgs e)
         {
             var opcoes = Opcoes.Criar(menuStrip1);
+            dataGridView1.DataSource = opcoes.ToList();  
         }
     }
 }
