@@ -20,7 +20,32 @@ namespace ControleAcessoCSharp
         private void button1_Click(object sender, EventArgs e)
         {
             var opcoes = Opcoes.Criar(menuStrip1);
-            dataGridView1.DataSource = opcoes.ToList();  
+            dataGridView1.DataSource = opcoes.ToList();
+
+            configurarGrade();
+        }
+
+        public void configurarGrade()
+        {
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 9);
+            dataGridView1.DefaultCellStyle.Font = new Font("Arial", 9);
+
+            dataGridView1.Columns["id"].Visible = false;
+
+            dataGridView1.Columns["nome"].HeaderText = "Nome";
+            dataGridView1.Columns["nome"].Width = 300;
+            dataGridView1.Columns["nome"].ReadOnly = true;
+
+            dataGridView1.Columns["descricao"].HeaderText = "Descrição";
+            dataGridView1.Columns["nome"].Width = 380;
+            dataGridView1.Columns["nome"].ReadOnly = true;
+
+            dataGridView1.Columns["nivel"].HeaderText = "Nível";
+            dataGridView1.Columns["nivel"].Width = 60;
+            dataGridView1.Columns["nivel"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns["nivel"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns["nivel"].ReadOnly = true;
+
         }
     }
 }
