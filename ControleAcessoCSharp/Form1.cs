@@ -19,14 +19,7 @@ namespace ControleAcessoCSharp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //foreach (ToolStripMenuItem item in menuStrip1.Items)
-            //{
-            //    MessageBox.Show(item.Text); //primeiro nivel do dropDown
-            //    foreach (ToolStripMenuItem opcao in item.DropDownItems)
-            //    {
-            //        MessageBox.Show(opcao.Text); //segundo nivel do dropDown
-            //    }
-            //}
+            var opcoes = Opcoes.Criar(menuStrip1);
         }
     }
 }
