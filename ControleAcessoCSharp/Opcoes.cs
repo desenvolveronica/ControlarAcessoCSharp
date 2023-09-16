@@ -51,6 +51,10 @@ namespace ControleAcessoCSharp
                     }
                       
                 }
+                else
+                {
+                    hashSetOpcoes.Add(new Opcoes(item.Name, descricao1, 1));
+                }
             }
             return hashSetOpcoes;
         }
