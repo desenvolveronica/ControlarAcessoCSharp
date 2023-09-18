@@ -23,6 +23,9 @@ namespace ControleAcessoCSharp
             dataGridView1.DataSource = opcoes.ToList();
 
             configurarGrade();
+            //criar
+            Opcoes.salvarMenu(opcoes);
+            MessageBox.Show("Gerado");
         }
 
         public void configurarGrade()
