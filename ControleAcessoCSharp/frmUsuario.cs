@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ControleAcessoCSharp
 {
-    public partial class frmUsuario : Form
+    public partial class FrmUsuario : Form
     {
-        public frmUsuario()
+        public FrmUsuario()
         {
             InitializeComponent();
         }

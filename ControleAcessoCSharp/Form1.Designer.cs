@@ -148,6 +148,7 @@
             this.cadastroDeUsuáriosToolStripMenuItem.Name = "cadastroDeUsuáriosToolStripMenuItem";
             this.cadastroDeUsuáriosToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.cadastroDeUsuáriosToolStripMenuItem.Text = "Cadastro de Usuários";
+            this.cadastroDeUsuáriosToolStripMenuItem.Click += new System.EventHandler(this.cadastroDeUsuáriosToolStripMenuItem_Click);
             // 
             // controleDeAcessoToolStripMenuItem
             // 
@@ -161,13 +162,13 @@
             // invalidarAtivarToolStripMenuItem
             // 
             this.invalidarAtivarToolStripMenuItem.Name = "invalidarAtivarToolStripMenuItem";
-            this.invalidarAtivarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.invalidarAtivarToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.invalidarAtivarToolStripMenuItem.Text = "Invalidar - Ativar";
             // 
             // acessoToolStripMenuItem1
             // 
             this.acessoToolStripMenuItem1.Name = "acessoToolStripMenuItem1";
-            this.acessoToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.acessoToolStripMenuItem1.Size = new System.Drawing.Size(161, 22);
             this.acessoToolStripMenuItem1.Text = "Acesso";
             // 
             // sairToolStripMenuItem

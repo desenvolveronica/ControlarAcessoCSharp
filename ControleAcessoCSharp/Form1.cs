@@ -59,6 +59,12 @@ namespace ControleAcessoCSharp
 
         }
 
-      
+        private void cadastroDeUsuáriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var frm = new FrmUsuario())
+            {
+                frm.ShowDialog();
+            }
+        }
     }
 }
