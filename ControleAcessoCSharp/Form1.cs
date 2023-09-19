@@ -24,8 +24,8 @@ namespace ControleAcessoCSharp
 
             configurarGrade();
             //criar
-            Opcoes.salvarMenu(opcoes);
-            MessageBox.Show("Gerado");
+            //Opcoes.salvarMenu(opcoes);
+            //MessageBox.Show("Gerado");
         }
 
         public void configurarGrade()
