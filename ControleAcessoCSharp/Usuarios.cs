@@ -29,7 +29,7 @@ namespace ControleAcessoCSharp
         
         }
 
-        public static DataTable BuscarTodps()
+        public static DataTable BuscarTodos()
         {
             var sql = "Select id, email, nome, nomeCurto, ativo FROM Usuarios";
             var dt = new DataTable();

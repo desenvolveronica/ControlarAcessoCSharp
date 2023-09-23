@@ -12,9 +12,11 @@ namespace ControleAcessoCSharp
 {
     public partial class FrmUsuario : Form
     {
+        Usuarios usuario = new Usuarios();
         public FrmUsuario()
         {
             InitializeComponent();
+            dataGridView1.DataSource = Usuarios.BuscarTodos();
         }
     }
 }
