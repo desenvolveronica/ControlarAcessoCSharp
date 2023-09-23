@@ -15,6 +15,10 @@ namespace ControleAcessoCSharp
         public Form1()
         {
             InitializeComponent();
+            var opcoes = Opcoes.Criar(menuStrip1);
+            dataGridView1.DataSource = opcoes.ToList();
+
+            configurarGrade();
         }
 
         private void button1_Click(object sender, EventArgs e)
