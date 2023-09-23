@@ -12,7 +12,6 @@ namespace ControleAcessoCSharp
     public class Opcoes
     {
         //string de conexão
-        private const string strConn = @"Data Source=VERONICAPC\SQLSERVER1993;Initial Catalog=ControleParaAcesos;Integrated Security=True";
 
         public int Id { get; set; } 
         public string Nome { get; set; }  //nome que aparece no menu 
@@ -68,7 +67,7 @@ namespace ControleAcessoCSharp
             var sql = "INSERT INTO MenuOpcoes(Nome, Descricao, Nivel)VALUES(@nome, @descricao, @nivel)";
             try
             {
-                using (var cn = new SqlConnection(strConn))
+                using (var cn = new SqlConnection(Program.strConn))
                 {
                     cn.Open();
                     using (var cmd = new SqlCommand(sql, cn))

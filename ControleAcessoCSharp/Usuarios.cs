@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ControleAcessoCSharp
 {
@@ -24,6 +27,29 @@ namespace ControleAcessoCSharp
             NomeCurto = nomeCurto;
             Ativo = ativo;
         
+        }
+
+        public static DataTable BuscarTodps()
+        {
+            var sql = "Select id, email, nome, nomeCurto, ativo FROM Usuarios";
+            var dt = new DataTable();
+
+            try 
+            {
+                using (var cn = new SqlConnection(Program.strConn))
+                {
+                    cn.Open();
+                    using (var da = new SqlDataAdapter(sql, cn))
+                    {
+                        da.Fill(dt);
+                    }
+                }
+            }
+            catch(Exception ex) 
+            {
+                MessageBox.Show(ex.Message);
+            }   
+            return dt;  
         }
     }
 

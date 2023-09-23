@@ -11,6 +11,9 @@ namespace ControleAcessoCSharp
         /// <summary>
         /// Ponto de entrada principal para o aplicativo.
         /// </summary>
+        /// 
+        public const string strConn = @"Data Source=VERONICAPC\SQLSERVER1993;Initial Catalog=ControleParaAcesos;Integrated Security=True";
+
         [STAThread]
         static void Main()
         {
