@@ -13,10 +13,31 @@ namespace ControleAcessoCSharp
     public partial class FrmUsuariosCadastro : Form
     {
         Usuarios usuario = new Usuarios();
-        public FrmUsuariosCadastro(Usuarios usuario)
+        public FrmUsuariosCadastro(Usuarios usuario, Operacao operacao)
         {
             InitializeComponent();
             this.usuario = usuario;
+
+            if (operacao == Operacao.Adicionar && usuario.Id == 0)
+                this.Text += " - Adicionar";
+            else if (operacao == Operacao.Alterar)
+                this.Text += " - Alterar";
+            else if (operacao == Operacao.Excluir)
+            {
+                this.Text += " - Excluir";
+                TravarControles();
+                btnSalvar.Visible = false;
+                btnOk.Visible = true;
+                btnOk.Text = "Excluir";
+            }
+            else if (operacao == Operacao.Consultar)
+            {
+                this.Text += " - Consultar ";
+                TravarControles();
+                btnSalvar.Visible = false;
+                btnOk.Visible = true;
+                btnOk.Text = "Fechar";
+            }
 
             //transferir dados do objeto usuario para form
             lblId.Text = usuario.Id.ToString();
@@ -25,6 +46,14 @@ namespace ControleAcessoCSharp
             txtNomeCurto.Text = usuario.NomeCurto;
             cmbAtivo.Text = usuario.Ativo == 'S' ? "Sim" : "Não";
 
+        }
+
+        private void TravarControles()
+        {
+            txtEmail.Enabled = false;
+            txtNome.Enabled = false;
+            txtNomeCurto.Enabled = false;
+            cmbAtivo.Enabled = false;
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -51,6 +80,31 @@ namespace ControleAcessoCSharp
             }
 
 
+        }
+
+        private void btnOk_Click(object sender, EventArgs e)
+        {
+            if (btnOk.Text == "Fechar")
+                this.Close();
+            else
+            {
+                var resposta = MessageBox.Show("Deseja mesmo excluir ?", "Excluir", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+                if(resposta == DialogResult.Yes)
+                {
+                    var result = usuario.Excluir(usuario.Id);
+                    if (result)
+                    {
+                        MessageBox.Show("Excluido com sucesso!");
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Não foi possível escluir, tente novamente");
+                        usuario.Id = -1;
+                    }
+
+                }
+            }
         }
     }
 }

@@ -29,6 +29,30 @@ namespace ControleAcessoCSharp
         
         }
 
+        public bool Excluir(int id)
+        {
+            var sql = "DELETE FROM Usuarios WHERE id=@id";
+
+            try
+            {
+                using (var cn = new SqlConnection(Program.strConn))
+                {
+                    cn.Open();
+                    using (var cmd = new SqlCommand(sql, cn))
+                    {
+                        cmd.Parameters.AddWithValue("@id", id);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+
+                return false;
+            }
+
+        }
         public string Salvar(Usuarios usuario) 
         {
             var sql = "";

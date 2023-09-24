@@ -51,13 +51,11 @@ namespace ControleAcessoCSharp
         {
             if (dataGridView1.Rows.Count > 0)//verifica se tem algo para alterar ou seja, se a grade não esta vazia
             {//transferindo os dados da grade (linha) para o objeto usuario
-                usuario.Id = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["id"].Value);
-                usuario.Email = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["email"].Value.ToString();
-                usuario.Nome = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["nome"].Value.ToString();
-                usuario.NomeCurto = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["nomeCurto"].Value.ToString();
-                usuario.Ativo = Convert.ToChar(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["ativo"].Value);
 
-                using (var frm = new FrmUsuariosCadastro(usuario))
+                TransferirGradeParaUsuario();
+
+
+                using (var frm = new FrmUsuariosCadastro(usuario, Operacao.Alterar))
                 {
                     frm.ShowDialog();
                     if (usuario.Id != -1) //-1 é o id de erro que vem so método btnSalvar_Click
@@ -76,7 +74,7 @@ namespace ControleAcessoCSharp
         {
             ReiniciarUsuario(usuario);
 
-            using (var frm = new FrmUsuariosCadastro(usuario))
+            using (var frm = new FrmUsuariosCadastro(usuario, Operacao.Adicionar))
             {
                 frm.ShowDialog();
                 dataGridView1.DataSource = Usuarios.BuscarTodos();
@@ -90,6 +88,47 @@ namespace ControleAcessoCSharp
             usuario.Nome = "";
             usuario.NomeCurto = "";
             usuario.Ativo = 'S';
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.Rows.Count > 0)
+            {
+                TransferirGradeParaUsuario();
+
+                using (var frm = new FrmUsuariosCadastro(usuario, Operacao.Excluir))
+                {
+                    frm.ShowDialog();
+
+                    if (usuario.Id != -1)
+                        dataGridView1.DataSource = Usuarios.BuscarTodos();
+                }
+            }
+        }
+        private void TransferirGradeParaUsuario()
+        {
+
+            usuario.Id = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["id"].Value);
+            usuario.Email = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["email"].Value.ToString();
+            usuario.Nome = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["nome"].Value.ToString();
+            usuario.NomeCurto = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["nomeCurto"].Value.ToString();
+            usuario.Ativo = Convert.ToChar(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["ativo"].Value);
+        }
+
+        private void consultarToolStripButton_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.Rows.Count > 0)
+            {
+                TransferirGradeParaUsuario();
+
+                using (var frm = new FrmUsuariosCadastro(usuario, Operacao.Consultar))
+                {
+                    frm.ShowDialog();
+
+                    if (usuario.Id != -1)
+                        dataGridView1.DataSource = Usuarios.BuscarTodos();
+                }
+            }
         }
     }
 }

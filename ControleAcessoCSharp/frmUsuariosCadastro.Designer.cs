@@ -41,6 +41,7 @@
             this.lblId = new System.Windows.Forms.Label();
             this.cmbAtivo = new System.Windows.Forms.ComboBox();
             this.btnSalvar = new System.Windows.Forms.Button();
+            this.btnOk = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -161,12 +162,26 @@
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
+            // btnOk
+            // 
+            this.btnOk.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOk.Location = new System.Drawing.Point(434, 299);
+            this.btnOk.Name = "btnOk";
+            this.btnOk.Size = new System.Drawing.Size(95, 42);
+            this.btnOk.TabIndex = 13;
+            this.btnOk.Text = "***";
+            this.btnOk.UseVisualStyleBackColor = false;
+            this.btnOk.Visible = false;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
+            // 
             // FrmUsuariosCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(668, 370);
+            this.Controls.Add(this.btnOk);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.cmbAtivo);
             this.Controls.Add(this.lblId);
@@ -201,5 +216,6 @@
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.ComboBox cmbAtivo;
         private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.Button btnOk;
     }
 }

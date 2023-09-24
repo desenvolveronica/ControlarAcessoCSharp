@@ -105,6 +105,7 @@
             this.toolStripButton3.Name = "toolStripButton3";
             this.toolStripButton3.Size = new System.Drawing.Size(62, 22);
             this.toolStripButton3.Text = "&Excluir";
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
             // toolStripSeparator4
             // 
@@ -118,6 +119,7 @@
             this.consultarToolStripButton.Name = "consultarToolStripButton";
             this.consultarToolStripButton.Size = new System.Drawing.Size(78, 22);
             this.consultarToolStripButton.Text = "&Consultar";
+            this.consultarToolStripButton.Click += new System.EventHandler(this.consultarToolStripButton_Click);
             // 
             // toolStripSeparator2
             // 
