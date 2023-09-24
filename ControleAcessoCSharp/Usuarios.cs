@@ -29,6 +29,41 @@ namespace ControleAcessoCSharp
         
         }
 
+        public string Salvar(Usuarios usuario)
+        {
+            var sql = "";
+
+            if (usuario.Id == 0)
+                sql = "INSERT INTO usuarios (email, nome, nomeCurto, ativo) VALUES (@email, @nome, @nomeCurto, @ativo)";
+            else
+                sql = "UPDATE usuarios SET email=@email, nome=@nome, nomeCurto=@nomeCurto, ativo=@ativo WHERE id=@id";
+
+            try
+            {
+                using (var cn = new SqlConnection(Program.strConn))
+                {
+                    cn.Open();
+                    using (var cmd = new SqlCommand(sql, cn))
+                    {
+                        if (usuario.Id > 0)
+                            cmd.Parameters.AddWithValue("@id", usuario.Id);
+                        cmd.Parameters.AddWithValue("@email", usuario.Email);
+                        cmd.Parameters.AddWithValue("@nome", usuario.Nome);
+                        cmd.Parameters.AddWithValue("@nomeCurto", usuario.NomeCurto);
+                        cmd.Parameters.AddWithValue("@ativo", usuario.Ativo);
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                return "ok";
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+            
+        }
+
         public static DataTable BuscarTodos()
         {
             var sql = "Select id, email, nome, nomeCurto, ativo FROM Usuarios";

@@ -26,5 +26,31 @@ namespace ControleAcessoCSharp
             cmbAtivo.Text = usuario.Ativo == 'S' ? "Sim" : "Não";
 
         }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            //transferir dados do form para o objeto 
+
+            usuario.Id = Convert.ToInt32(lblId.Text);
+            usuario.Email = txtEmail.Text;  
+            usuario.Nome = txtNome.Text;    
+            usuario.NomeCurto = txtNomeCurto.Text;
+            usuario.Ativo = cmbAtivo.Text[0];
+
+            var result = usuario.Salvar(usuario);
+
+            if(result == "ok")
+            {
+                MessageBox.Show("Salvo com sucesso!");
+                this.Close();//fecha o formulário
+            }
+            else
+            {
+                MessageBox.Show("Não foi possível salvar, tente novamente.\n" + result);
+                usuario.Id = -1;
+            }
+
+
+        }
     }
 }
