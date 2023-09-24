@@ -60,7 +60,7 @@ namespace ControleAcessoCSharp
                 using (var frm = new FrmUsuariosCadastro(usuario))
                 {
                     frm.ShowDialog();
-                    if (usuario.Id != -1)
+                    if (usuario.Id != -1) //-1 é o id de erro que vem so método btnSalvar_Click
                     {
                         dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["id"].Value = usuario.Id;
                         dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["email"].Value = usuario.Email;
@@ -70,6 +70,26 @@ namespace ControleAcessoCSharp
                     }
                 }
             }
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            ReiniciarUsuario(usuario);
+
+            using (var frm = new FrmUsuariosCadastro(usuario))
+            {
+                frm.ShowDialog();
+                dataGridView1.DataSource = Usuarios.BuscarTodos();
+            }
+        }
+
+        private void ReiniciarUsuario(Usuarios usuario)
+        {   //está limpando os dados do objeto usuário
+            usuario.Id = 0;
+            usuario.Email = "";
+            usuario.Nome = "";
+            usuario.NomeCurto = "";
+            usuario.Ativo = 'S';
         }
     }
 }

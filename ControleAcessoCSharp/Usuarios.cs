@@ -29,7 +29,7 @@ namespace ControleAcessoCSharp
         
         }
 
-        public string Salvar(Usuarios usuario)
+        public string Salvar(Usuarios usuario) 
         {
             var sql = "";
 
