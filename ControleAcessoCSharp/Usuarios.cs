@@ -83,7 +83,13 @@ namespace ControleAcessoCSharp
             }
             catch (Exception ex)
             {
-                return ex.Message;
+                var result = "";
+                if (ex.HResult == -2146232060)
+                    result = usuario.Email + "já existe no cadastro de usuários";
+                else
+                    result = ex.Message;
+
+                return result;
             }
             
         }
