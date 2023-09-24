@@ -46,7 +46,7 @@ namespace ControleAcessoCSharp
                     using (var cmd = new SqlCommand(sql, cn))
                     {
                         if (usuario.Id > 0)
-                            cmd.Parameters.AddWithValue("@id", usuario.Id);
+                        cmd.Parameters.AddWithValue("@id", usuario.Id);
                         cmd.Parameters.AddWithValue("@email", usuario.Email);
                         cmd.Parameters.AddWithValue("@nome", usuario.Nome);
                         cmd.Parameters.AddWithValue("@nomeCurto", usuario.NomeCurto);
