@@ -47,5 +47,12 @@ namespace ControleAcessoCSharp
 
         }
 
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            if ()//verifica se tem algo para alterar ou seja, se a grade não esta vazia
+            {
+
+            }
+        }
     }
 }
