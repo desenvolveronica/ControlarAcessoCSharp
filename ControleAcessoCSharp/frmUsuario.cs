@@ -49,9 +49,26 @@ namespace ControleAcessoCSharp
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            if ()//verifica se tem algo para alterar ou seja, se a grade não esta vazia
-            {
+            if (dataGridView1.Rows.Count > 0)//verifica se tem algo para alterar ou seja, se a grade não esta vazia
+            {//transferindo os dados da grade (linha) para o objeto usuario
+                usuario.Id = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["id"].Value);
+                usuario.Email = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["email"].Value.ToString();
+                usuario.Nome = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["nome"].Value.ToString();
+                usuario.NomeCurto = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["nomeCurto"].Value.ToString();
+                usuario.Ativo = Convert.ToChar(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["ativo"].Value);
 
+                using (var frm = new FrmUsuariosCadastro(usuario))
+                {
+                    frm.ShowDialog();
+                    if (usuario.Id != -1)
+                    {
+                        dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["id"].Value = usuario.Id;
+                        dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["email"].Value = usuario.Email;
+                        dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["nome"].Value = usuario.Nome;
+                        dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["nomeCurto"].Value = usuario.NomeCurto;
+                        dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["ativo"].Value = usuario.Ativo;
+                    }
+                }
             }
         }
     }

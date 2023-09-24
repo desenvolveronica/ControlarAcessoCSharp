@@ -63,11 +63,11 @@
     <Compile Include="FrmUsuario.Designer.cs">
       <DependentUpon>FrmUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmUsuariosCadastro.cs">
+    <Compile Include="FrmUsuariosCadastro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmUsuariosCadastro.Designer.cs">
-      <DependentUpon>frmUsuariosCadastro.cs</DependentUpon>
+    <Compile Include="FrmUsuariosCadastro.Designer.cs">
+      <DependentUpon>FrmUsuariosCadastro.cs</DependentUpon>
     </Compile>
     <Compile Include="Opcoes.cs" />
     <Compile Include="Program.cs" />
@@ -79,8 +79,8 @@
     <EmbeddedResource Include="FrmUsuario.resx">
       <DependentUpon>FrmUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmUsuariosCadastro.resx">
-      <DependentUpon>frmUsuariosCadastro.cs</DependentUpon>
+    <EmbeddedResource Include="FrmUsuariosCadastro.resx">
+      <DependentUpon>FrmUsuariosCadastro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
