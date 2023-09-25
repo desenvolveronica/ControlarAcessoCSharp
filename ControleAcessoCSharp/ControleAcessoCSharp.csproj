@@ -51,17 +51,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ControleParaAcesosDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="FrmMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FrmMenu.Designer.cs">
+      <DependentUpon>FrmMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmUsuario.Designer.cs">
       <DependentUpon>FrmUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUsuariosAcesso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUsuariosAcesso.Designer.cs">
+      <DependentUpon>FrmUsuariosAcesso.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmUsuariosCadastro.cs">
       <SubType>Form</SubType>
@@ -74,11 +80,14 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuarios.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="FrmMenu.resx">
+      <DependentUpon>FrmMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUsuario.resx">
       <DependentUpon>FrmUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUsuariosAcesso.resx">
+      <DependentUpon>FrmUsuariosAcesso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUsuariosCadastro.resx">
       <DependentUpon>FrmUsuariosCadastro.cs</DependentUpon>

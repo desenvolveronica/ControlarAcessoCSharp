@@ -37,8 +37,9 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.consultarToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.selecionarToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -62,8 +63,9 @@
             this.toolStripSeparator3,
             this.toolStripButton3,
             this.toolStripSeparator4,
-            this.consultarToolStripButton,
-            this.toolStripSeparator2});
+            this.toolStripButton4,
+            this.toolStripSeparator5,
+            this.selecionarToolStripButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(888, 25);
@@ -112,19 +114,29 @@
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
             // 
-            // consultarToolStripButton
+            // selecionarToolStripButton
             // 
-            this.consultarToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("consultarToolStripButton.Image")));
-            this.consultarToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.consultarToolStripButton.Name = "consultarToolStripButton";
-            this.consultarToolStripButton.Size = new System.Drawing.Size(78, 22);
-            this.consultarToolStripButton.Text = "&Consultar";
-            this.consultarToolStripButton.Click += new System.EventHandler(this.consultarToolStripButton_Click);
+            this.selecionarToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("selecionarToolStripButton.Image")));
+            this.selecionarToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.selecionarToolStripButton.Name = "selecionarToolStripButton";
+            this.selecionarToolStripButton.Size = new System.Drawing.Size(81, 22);
+            this.selecionarToolStripButton.Text = "&Selecionar";
+            this.selecionarToolStripButton.ToolTipText = "Consultar";
+            this.selecionarToolStripButton.Visible = false;
+            this.selecionarToolStripButton.Click += new System.EventHandler(this.consultarToolStripButton_Click);
             // 
-            // toolStripSeparator2
+            // toolStripButton4
             // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
+            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.Size = new System.Drawing.Size(78, 22);
+            this.toolStripButton4.Text = "&Consultar";
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
             // 
             // FrmUsuario
             // 
@@ -148,13 +160,14 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton consultarToolStripButton;
+        private System.Windows.Forms.ToolStripButton selecionarToolStripButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripButton toolStripButton4;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
     }
 }

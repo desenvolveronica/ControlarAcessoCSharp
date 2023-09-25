@@ -1,6 +1,6 @@
 ﻿namespace ControleAcessoCSharp
 {
-    partial class Form1
+    partial class FrmMenu
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -42,10 +42,10 @@
             this.acessoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastroDeUsuáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.controleDeAcessoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ativarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.invalidarAtivarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acessoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ativarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -151,18 +151,24 @@
             // controleDeAcessoToolStripMenuItem
             // 
             this.controleDeAcessoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ativarToolStripMenuItem,
             this.invalidarAtivarToolStripMenuItem,
+            this.ativarToolStripMenuItem,
             this.acessoToolStripMenuItem1});
             this.controleDeAcessoToolStripMenuItem.Name = "controleDeAcessoToolStripMenuItem";
             this.controleDeAcessoToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.controleDeAcessoToolStripMenuItem.Text = "Controle de Acesso";
             // 
+            // ativarToolStripMenuItem
+            // 
+            this.ativarToolStripMenuItem.Name = "ativarToolStripMenuItem";
+            this.ativarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ativarToolStripMenuItem.Text = "Ativar";
+            // 
             // invalidarAtivarToolStripMenuItem
             // 
             this.invalidarAtivarToolStripMenuItem.Name = "invalidarAtivarToolStripMenuItem";
             this.invalidarAtivarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.invalidarAtivarToolStripMenuItem.Text = "Invalidar";
+            this.invalidarAtivarToolStripMenuItem.Text = "Inativar";
             // 
             // acessoToolStripMenuItem1
             // 
@@ -176,20 +182,14 @@
             this.sairToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
             this.sairToolStripMenuItem.Text = "Sair";
             // 
-            // ativarToolStripMenuItem
-            // 
-            this.ativarToolStripMenuItem.Name = "ativarToolStripMenuItem";
-            this.ativarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.ativarToolStripMenuItem.Text = "Ativar";
-            // 
-            // Form1
+            // FrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(482, 293);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "FrmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Controle de Acesso";
             this.menuStrip1.ResumeLayout(false);
