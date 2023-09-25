@@ -13,11 +13,28 @@ namespace ControleAcessoCSharp
     public partial class FrmUsuario : Form
     {
         Usuarios usuario = new Usuarios();
-        public FrmUsuario()
+        public FrmUsuario(string opcao = "")
         {
             InitializeComponent();
             dataGridView1.DataSource = Usuarios.BuscarTodos();
             configurarGrade();
+
+            if (opcao.ToLower() == "selecionar")
+            {
+                adicionarToolStripButton.Visible = false;
+                alterarToolStripButton.Visible = false; 
+                excluirToolStripButton.Visible = false;
+                consultarToolStripButton.Visible = false;
+
+                selecionarToolStripButton.Visible = true;
+
+                toolStripSeparator1.Visible = false;
+                toolStripSeparator3.Visible = false;
+                toolStripSeparator4.Visible = false;
+                toolStripSeparator5.Visible = false;   
+
+            }
+
         }
 
         private void configurarGrade()
@@ -115,7 +132,7 @@ namespace ControleAcessoCSharp
             usuario.Ativo = Convert.ToChar(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["ativo"].Value);
         }
 
-        private void consultarToolStripButton_Click(object sender, EventArgs e)
+        private void consultarToolStripButton_Click_1(object sender, EventArgs e)
         {
             if (dataGridView1.Rows.Count > 0)
             {

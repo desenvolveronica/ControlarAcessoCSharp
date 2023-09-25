@@ -42,8 +42,8 @@
             this.acessoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastroDeUsuáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.controleDeAcessoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ativarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.invalidarAtivarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ativarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acessoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
@@ -158,23 +158,24 @@
             this.controleDeAcessoToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.controleDeAcessoToolStripMenuItem.Text = "Controle de Acesso";
             // 
-            // ativarToolStripMenuItem
-            // 
-            this.ativarToolStripMenuItem.Name = "ativarToolStripMenuItem";
-            this.ativarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.ativarToolStripMenuItem.Text = "Ativar";
-            // 
             // invalidarAtivarToolStripMenuItem
             // 
             this.invalidarAtivarToolStripMenuItem.Name = "invalidarAtivarToolStripMenuItem";
             this.invalidarAtivarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.invalidarAtivarToolStripMenuItem.Text = "Inativar";
             // 
+            // ativarToolStripMenuItem
+            // 
+            this.ativarToolStripMenuItem.Name = "ativarToolStripMenuItem";
+            this.ativarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ativarToolStripMenuItem.Text = "Ativar";
+            // 
             // acessoToolStripMenuItem1
             // 
             this.acessoToolStripMenuItem1.Name = "acessoToolStripMenuItem1";
             this.acessoToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.acessoToolStripMenuItem1.Text = "Acesso";
+            this.acessoToolStripMenuItem1.Click += new System.EventHandler(this.acessoToolStripMenuItem1_Click);
             // 
             // sairToolStripMenuItem
             // 
