@@ -34,7 +34,7 @@ namespace ControleAcessoCSharp
 
             //id da opção do menu
             dataGridView1.Columns.Add("id_opcao", "Id");
-           // dataGridView1.Columns["id_opcao"].Visible = false;
+            dataGridView1.Columns["id_opcao"].Visible = false;
 
             dataGridView1.Columns.Add("nome", "Nome");
             dataGridView1.Columns["nome"].Visible = false;
@@ -44,18 +44,18 @@ namespace ControleAcessoCSharp
             dataGridView1.Columns["descricao"].ReadOnly = true;
 
             dataGridView1.Columns.Add("nivel", "Nível");
-            //dataGridView1.Columns["nivel"].Visible = false;
+            dataGridView1.Columns["nivel"].Visible = false;
 
             //Id do registro do acesso
             dataGridView1.Columns.Add("id_registro", "Id do Registro");
-          //  dataGridView1.Columns["id_registro"].Visible = false;
+            dataGridView1.Columns["id_registro"].Visible = false;
 
             dataGridView1.Columns.Add("id_usuario", "Usuário");
-          //  dataGridView1.Columns["id_usuario"].Visible = false;
+            dataGridView1.Columns["id_usuario"].Visible = false;
 
             //situação corrente 
             dataGridView1.Columns.Add("liberado", "Liberado");
-           // dataGridView1.Columns["liberado"].Visible = false;
+            dataGridView1.Columns["liberado"].Visible = false;
 
             //adicionar coluna checkbox
             var acesso = new DataGridViewCheckBoxColumn();
@@ -85,5 +85,9 @@ namespace ControleAcessoCSharp
 
         }
 
+        private void salvarToolStripButton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

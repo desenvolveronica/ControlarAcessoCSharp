@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ControleAcessoCSharp
 {
@@ -73,6 +74,44 @@ namespace ControleAcessoCSharp
                 Console.WriteLine(ex.Message);
             }
             return listaAcessos;
+        }
+
+        public string Salvar(int idUsuario, List<Acessos> listaAcessos)
+        {
+            try
+            {
+                using (var cn = new SqlConnection(Program.strConn))
+                {
+                    cn.Open();
+                    foreach (var item in listaAcessos)
+                    {
+                        var sql = "";
+                        if (item.IdRegistro == 0)
+                            sql = "INSERT INTO MenuAcesso (id_opcao, id_usuario, liberado) VALUES (@id_opcao, @id_usuario, @liberado)";
+                        else
+                            sql = "UPDATE MenuAcesso SET id_opcao=@id_opcao, id_usuario=@id_usuario, liberado=@liberado WHERE id=@id";
+
+                        using (var cmd = new SqlCommand(sql, cn))
+                        {
+                            if (item.IdRegistro > 0)
+                                cmd.Parameters.AddWithValue("@id", item.IdRegistro);
+                            cmd.Parameters.AddWithValue("@id_opcao", item.IdOpcao);
+                            cmd.Parameters.AddWithValue("@id_usuario", idUsuario);
+                            cmd.Parameters.AddWithValue("@liberado", item.Liberado);
+
+                            cmd.ExecuteNonQuery();
+
+                        }
+
+                    }
+                } 
+                    return "ok";
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
 
     }
