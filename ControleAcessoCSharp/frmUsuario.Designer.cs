@@ -137,6 +137,7 @@
             this.selecionarToolStripButton.Text = "&Selecionar";
             this.selecionarToolStripButton.ToolTipText = "Selecionar";
             this.selecionarToolStripButton.Visible = false;
+            this.selecionarToolStripButton.Click += new System.EventHandler(this.selecionarToolStripButton_Click);
             // 
             // FrmUsuario
             // 

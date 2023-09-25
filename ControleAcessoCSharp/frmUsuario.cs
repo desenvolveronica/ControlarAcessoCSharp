@@ -147,5 +147,14 @@ namespace ControleAcessoCSharp
                 }
             }
         }
+
+        private void selecionarToolStripButton_Click(object sender, EventArgs e)
+        {
+            TransferirGradeParaUsuario();
+            using (var frm = new FrmUsuariosAcesso(usuario))
+            {
+                frm.ShowDialog();
+            }
+        }
     }
 }
