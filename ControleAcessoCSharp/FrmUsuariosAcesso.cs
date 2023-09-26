@@ -87,7 +87,34 @@ namespace ControleAcessoCSharp
 
         private void salvarToolStripButton1_Click(object sender, EventArgs e)
         {
+            var listaAcesso = new List<Acessos>();
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                var chk = Convert.ToBoolean(row.Cells["acesso"].Value) ? 'S' : 'N';
 
+                if (Convert.ToChar(row.Cells["liberado"].Value) != chk)
+                    listaAcesso.Add(new Acessos(Convert.ToInt32(row.Cells["id_opcao"].Value), chk,
+                        Convert.ToInt32(row.Cells["id_registro"].Value)));
+            }
+            var id_usuario = Convert.ToInt32(lblId.Text);
+            if (listaAcesso.Count > 0)
+            {
+                if (new Acessos().Salvar(id_usuario, listaAcesso) == "ok")
+                {
+                    MessageBox.Show("Acessos Salvos!");
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("Não foi possível salvar!\nTente novamente mais tarde!");
+                }
+            }
+            this.Close();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dataGridView1.EndEdit();
         }
     }
 }

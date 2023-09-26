@@ -89,7 +89,7 @@ namespace ControleAcessoCSharp
                         if (item.IdRegistro == 0)
                             sql = "INSERT INTO MenuAcesso (id_opcao, id_usuario, liberado) VALUES (@id_opcao, @id_usuario, @liberado)";
                         else
-                            sql = "UPDATE MenuAcesso SET id_opcao=@id_opcao, id_usuario=@id_usuario, liberado=@liberado WHERE id=@id";
+                            sql = "UPDATE MenuAcesso SET liberado=@liberado WHERE id=@id AND id_opcao=@id_opcao AND id_usuario=@id_usuario";
 
                         using (var cmd = new SqlCommand(sql, cn))
                         {
